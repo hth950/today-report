@@ -13,7 +13,7 @@ export default function GenerateButton({
   onSuccess,
   force = false,
   className = '',
-  children = 'Generate Briefing'
+  children = '브리핑 생성'
 }: GenerateButtonProps) {
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -80,7 +80,7 @@ export default function GenerateButton({
             />
           </svg>
         )}
-        {generating ? 'Generating...' : children}
+        {generating ? '생성 중...' : children}
       </button>
 
       {error && (

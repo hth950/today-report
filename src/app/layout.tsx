@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Today Report - Your Daily Tech Briefing",
-  description: "Personalized daily tech news, new technologies, and project ideas",
+  title: "Today Report - 매일 아침 기술 브리핑",
+  description: "매일 아침 나만의 기술 브리핑을 확인하세요",
 };
 
 export default function RootLayout({

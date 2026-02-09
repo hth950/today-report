@@ -58,7 +58,7 @@ export default function TagInput({ tags, onTagsChange, placeholder, label }: Tag
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleKeyDown}
           onBlur={addTag}
-          placeholder={placeholder || 'Type and press Enter'}
+          placeholder={placeholder || '입력 후 Enter를 누르세요'}
           className="flex-1 min-w-[150px] outline-none bg-transparent text-gray-900 dark:text-gray-100"
         />
       </div>

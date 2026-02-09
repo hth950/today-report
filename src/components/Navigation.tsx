@@ -9,9 +9,9 @@ export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const links = [
-    { href: '/', label: 'Today' },
-    { href: '/history', label: 'History' },
-    { href: '/profile', label: 'Profile' },
+    { href: '/', label: '오늘' },
+    { href: '/history', label: '히스토리' },
+    { href: '/profile', label: '프로필' },
   ];
 
   const isActive = (href: string) => {
@@ -28,7 +28,7 @@ export default function Navigation() {
             href="/"
             className="text-xl font-bold text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
           >
-            Today Report
+            오늘의 리포트
           </Link>
 
           {/* Desktop Navigation */}

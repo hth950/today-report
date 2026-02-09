@@ -3,12 +3,14 @@ import type { UserProfile, SearchResult } from '@/types';
 export function buildSystemPrompt(): string {
   return `You are a personal tech briefing curator. Your job is to analyze search results and create a personalized daily tech briefing for a developer.
 
+Write all content in Korean (한국어).
+
 Output ONLY valid JSON matching this exact schema (no markdown, no code fences, no extra text):
 {
   "summary": "2-3 sentence overview of today's briefing",
   "sections": {
     "newTechnologies": {
-      "title": "New Technologies & Updates",
+      "title": "새로운 기술 & 업데이트",
       "items": [
         {
           "name": "Technology name",
@@ -19,7 +21,7 @@ Output ONLY valid JSON matching this exact schema (no markdown, no code fences, 
       ]
     },
     "techNews": {
-      "title": "Tech News",
+      "title": "기술 뉴스",
       "items": [
         {
           "headline": "News headline",
@@ -31,7 +33,7 @@ Output ONLY valid JSON matching this exact schema (no markdown, no code fences, 
       ]
     },
     "projectIdeas": {
-      "title": "Project Ideas & Improvements",
+      "title": "프로젝트 아이디어 & 개선사항",
       "items": [
         {
           "project": "Which user project this relates to",
@@ -51,7 +53,8 @@ Rules:
 - Focus on practical relevance to the user's specific skills and projects
 - Keep each item concise (2-3 sentences max)
 - If search results are limited, focus on quality over quantity
-- Always return valid JSON`;
+- Always return valid JSON
+- Write all content in Korean (한국어)`;
 }
 
 export function buildUserPrompt(profile: UserProfile, searchResults: SearchResult[], date: string): string {

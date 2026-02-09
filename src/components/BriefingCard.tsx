@@ -72,7 +72,7 @@ function renderTechItem(item: TechItem) {
           {item.name}
         </h3>
         <span className="shrink-0 px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs font-medium rounded">
-          Relevant
+          관련성
         </span>
       </div>
       <p className="text-gray-700 dark:text-gray-300 mb-2 leading-relaxed">
@@ -88,7 +88,7 @@ function renderTechItem(item: TechItem) {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1 text-sm text-blue-600 dark:text-blue-400 hover:underline"
         >
-          Learn more
+          자세히 보기
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path
               strokeLinecap="round"
@@ -111,7 +111,7 @@ function renderNewsItem(item: NewsItem) {
           {item.headline}
         </h3>
         <span className="shrink-0 px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs font-medium rounded">
-          Relevant
+          관련성
         </span>
       </div>
       <p className="text-gray-700 dark:text-gray-300 mb-2 leading-relaxed">
@@ -122,7 +122,7 @@ function renderNewsItem(item: NewsItem) {
       </p>
       <div className="flex items-center gap-3">
         <span className="text-sm text-gray-500 dark:text-gray-400">
-          Source: {item.source}
+          출처: {item.source}
         </span>
         {item.url && (
           <>
@@ -133,7 +133,7 @@ function renderNewsItem(item: NewsItem) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-sm text-blue-600 dark:text-blue-400 hover:underline"
             >
-              Read full article
+              전체 기사 보기
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path
                   strokeLinecap="round"
@@ -165,7 +165,7 @@ function renderIdeaItem(item: IdeaItem) {
       {item.resources && item.resources.length > 0 && (
         <div>
           <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Resources:
+            참고 자료:
           </p>
           <ul className="space-y-1">
             {item.resources.map((resource, idx) => (

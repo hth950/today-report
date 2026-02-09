@@ -56,7 +56,7 @@ export default function ProfilePage() {
 
       const updated = await response.json();
       setProfile(updated);
-      setMessage({ type: 'success', text: 'Profile saved successfully!' });
+      setMessage({ type: 'success', text: '프로필이 저장되었습니다!' });
 
       // Clear success message after 3 seconds
       setTimeout(() => setMessage(null), 3000);
@@ -76,7 +76,7 @@ export default function ProfilePage() {
       <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600 dark:text-gray-400">Loading profile...</p>
+          <p className="mt-4 text-gray-600 dark:text-gray-400">프로필을 불러오는 중...</p>
         </div>
       </div>
     );
@@ -86,12 +86,12 @@ export default function ProfilePage() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
         <div className="text-center">
-          <p className="text-red-600">Failed to load profile</p>
+          <p className="text-red-600">프로필을 불러올 수 없습니다</p>
           <button
             onClick={loadProfile}
             className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
           >
-            Retry
+            다시 시도
           </button>
         </div>
       </div>
@@ -104,10 +104,10 @@ export default function ProfilePage() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
-            User Profile
+            프로필 설정
           </h1>
           <p className="mt-2 text-gray-600 dark:text-gray-400">
-            Manage your profile information and preferences
+            프로필 정보와 선호사항을 관리하세요
           </p>
         </div>
 
@@ -129,39 +129,39 @@ export default function ProfilePage() {
           {/* Name */}
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Name
+              이름
             </label>
             <input
               type="text"
               value={profile.name || ''}
               onChange={(e) => setProfile({ ...profile, name: e.target.value })}
-              placeholder="Enter your name"
+              placeholder="이름을 입력하세요"
               className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
 
           {/* Skills */}
           <TagInput
-            label="Skills"
+            label="기술 스택"
             tags={profile.skills}
             onTagsChange={(skills) => setProfile({ ...profile, skills })}
-            placeholder="Add a skill and press Enter"
+            placeholder="기술을 입력하고 Enter를 누르세요"
           />
 
           {/* Technologies */}
           <TagInput
-            label="Technologies"
+            label="사용 기술"
             tags={profile.technologies}
             onTagsChange={(technologies) => setProfile({ ...profile, technologies })}
-            placeholder="Add a technology and press Enter"
+            placeholder="기술을 입력하고 Enter를 누르세요"
           />
 
           {/* Interests */}
           <TagInput
-            label="Interest Topics"
+            label="관심 분야"
             tags={profile.interests}
             onTagsChange={(interests) => setProfile({ ...profile, interests })}
-            placeholder="Add an interest and press Enter"
+            placeholder="관심 분야를 입력하고 Enter를 누르세요"
           />
 
           {/* Projects */}
@@ -177,14 +177,14 @@ export default function ProfilePage() {
               disabled={saving}
               className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white rounded-lg font-medium transition-colors focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
-              {saving ? 'Saving...' : 'Save Profile'}
+              {saving ? '저장 중...' : '저장'}
             </button>
           </div>
         </div>
 
         {/* Metadata */}
         <div className="mt-6 text-sm text-gray-500 dark:text-gray-400 text-center">
-          Last updated: {new Date(profile.updatedAt).toLocaleString()}
+          마지막 수정: {new Date(profile.updatedAt).toLocaleString('ko-KR')}
         </div>
       </div>
     </div>
